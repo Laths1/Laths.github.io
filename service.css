@@ -1,0 +1,272 @@
+/* ==========
+Fonts
+========== */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&family=Playfair+Display&family=Roboto+Slab:wght@300;400;500;700&family=Roboto:wght@100;300&display=swap');
+/* ==========
+variables
+========== */
+:root{
+    --primary-color-1:#17252a;
+    --primary-color-2:#174948;
+    --primary-color-3:#3aafa9;
+    --primary-color-4:#def2f1;
+    --primary-color-5:#0b0c10;
+    --primary-color-6:#feffff;
+    
+
+    --transition:all 200ms linear;
+    --spacing:0.25rem;
+    --radius:0.5rem;
+
+    --ff-primary-1:'Roboto', sans-serif;
+    --ff-primary-2:'Playfair Display', serif;
+}
+/* ==========
+global styles
+========== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: var(--primary-color-4);
+}
+ul{
+    list-style-type: none;
+}
+img{
+    width:100%;
+    display:block;
+  }
+  .btn{
+    text-transform: uppercase;
+    background: var(--primary-color-3);
+    padding: 0.75rem 1rem;
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: var(--ff-primary-1);
+    /* border-radius: var(--radius); */
+    
+    
+      }
+     .btn:hover{
+        background: transparent;
+        border: 2px solid var(--primary-color-3);
+     }
+ h1{
+    font-family: var(--ff-primary-1);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    max-width: 35rem;
+    text-align: center;
+}
+p{
+    font-family: var(--ff-primary-1);
+    letter-spacing: 2px;
+}
+ /* ==========
+nav
+========== */
+.nav-area{
+    /* background:var(--primary-color-2); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:baseline;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    padding: 0.5rem 1rem;
+    font-family: var(--ff-primary-1);
+    flex-wrap: wrap;
+}
+
+.list-item ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: start ;
+    gap: 8rem; 
+}
+.list-item ul a{
+    color: var(--primary-color-6);
+    padding: 0.5rem 1rem;
+    
+}
+
+.list-item ul a:hover{
+    color: var(--primary-color-3);
+    transition: var(--transition);
+    box-shadow: 0 3px var(--primary-color-3);
+}
+.logo a{
+    color: var(--primary-color-4);
+    transition: var(--transition);
+
+}
+.logo a:hover{
+    color: var(--primary-color-3);
+}
+@media screen and (max-width:576px){
+    .nav-area{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+    .main-text{
+        display: none;
+    }
+   
+}
+@media screen and (max-width:880px){
+    .list-item ul{
+     gap: 1rem;
+    }
+    
+}
+@media screen and (max-width:1200px) {
+    .main-text{
+        display:none;
+    }
+    .nav-area{
+        padding: 0.2rem 0.5rem;
+    }
+    
+}
+/* ==========
+header
+========== */
+header{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/images/gavel-gc77c3cf35_1920.jpg) ;
+    /* background: radial-gradient(var(--primary-color-2),var(--primary-color-5)); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50vh;  
+}
+@media screen and (max-width:880px) {
+     header{
+         background: radial-gradient(var(--primary-color-2),var(--primary-color-5));
+    
+}
+}
+/* ==========
+banner
+========== */
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 45vh;
+    color: var(--primary-color-6);
+    gap: 1rem;
+}
+.main-text{
+    max-width: 30rem;
+    text-align: center;
+}
+
+/* ==========
+service-specifics
+========== */
+
+.service-detail-container{
+    display: flex;
+    margin: 1rem;
+    background: var(--primary-color-1);
+    color: var(--primary-color-6);
+    padding: 0.5rem;
+
+}
+.service-specifics{
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+    gap: 2rem;
+    max-width: 45vw;
+    
+}
+.card-container{
+    background: var(--primary-color-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+}
+.card-container:hover{
+    transform: translateY(5px);
+    transition: var(--transition);
+    background: var(--primary-color-3);
+}
+.list-of-lawyers-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
+    gap: 2rem;
+    margin:0 auto
+}
+.lawyer-img{
+    border-radius: 50%;
+    max-width: 15rem;
+    padding: 0.5rem;
+}
+.lawyer-title{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+@media screen and (max-width:880px) {
+    .list-of-lawyers-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .service-detail-container{
+        flex-direction: column;
+    }
+    .service-specifics{
+        max-width:95vw;
+    }
+    
+}
+@media screen and(max-width:1200px) {
+    .service-specifics{
+        padding: 0.5rem ;
+    }
+    
+}
+/* ==========
+footer
+========== */
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: var(--primary-color-5);
+    padding: 3.5rem 0 ;
+    font-family: var(--ff-primary-1);
+    text-transform: capitalize;
+    
+}
+.footer-headings{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-family: var(--ff-primary-1);
+    text-transform: capitalize;
+    color: var(--primary-color-6);
+    font-weight: 500;
+    
+}
+@media screen and (max-width:576px){
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding:0.5rem;
+    }
+}
